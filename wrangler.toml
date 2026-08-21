@@ -1,0 +1,7 @@
+name = "pennyocr-mcp"
+main = "worker.js"
+compatibility_date = "2026-08-01"
+routes = [{ pattern = "mcp.pennyocr.com", custom_domain = true }]
+
+[vars]
+API_BASE = "https://api.pennyocr.com"
