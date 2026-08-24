@@ -1,0 +1,10 @@
+{
+  "name": "pennyocr-mcp",
+  "version": "0.1.0",
+  "description": "Remote MCP server: read any PDF/image into agent context with exact cost reporting.",
+  "type": "module",
+  "main": "server.mjs",
+  "scripts": { "start": "node server.mjs" },
+  "license": "MIT",
+  "homepage": "https://pennyocr.com/mcp/"
+}
