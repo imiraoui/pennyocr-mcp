@@ -78,7 +78,7 @@ async function handleRpc(msg, apiKey, env) {
   if (method === "tools/call") {
     if (!apiKey) {
       return toolText(id,
-        "Missing PennyOCR API key. Add headers: {\"Authorization\": \"Bearer pk_live_...\"} to this MCP server config (or ?key=... in the URL). Keys are free at https://pennyocr.com/dashboard/ — 100 pages/month included. Agent signup flow: https://pennyocr.com/llms.txt",
+        "Missing PennyOCR API key. Add headers: {\"Authorization\": \"Bearer pk_live_...\"} to this MCP server config (or ?key=... in the URL). Keys are free at https://pennyocr.com/dashboard/ — your first 100 pages are free. Agent signup flow: https://pennyocr.com/llms.txt",
         true);
     }
     const { name, arguments: args = {} } = params || {};

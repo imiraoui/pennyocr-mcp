@@ -17,7 +17,7 @@ with **exact cost reporting and hard spend caps**.
 }
 ```
 
-Keys are free (100 pages/month) at [pennyocr.com/dashboard](https://pennyocr.com/dashboard/).
+Keys are free (first 100 pages free) at [pennyocr.com/dashboard](https://pennyocr.com/dashboard/).
 Clients that can't set headers: `https://mcp.pennyocr.com/?key=pk_live_...`
 
 ## Tools
