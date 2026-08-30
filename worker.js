@@ -37,6 +37,12 @@ const TOOLS = [
       required: ["url"],
     },
   },
+  {
+    name: "check_balance",
+    description:
+      "Free: return this PennyOCR key's remaining budget — prepaid credit_pages, credit_value_usd, and free_pages_available_now (the first 100 pages on an account are free). No cost. Call this to decide whether to proceed with a paid read_document, or to know when to top up.",
+    inputSchema: { type: "object", properties: {} },
+  },
 ];
 
 function rpcResult(id, result) {
@@ -54,6 +60,14 @@ async function callGateway(env, path, body, apiKey) {
     method: "POST",
     headers: { "Content-Type": "application/json", Authorization: `Bearer ${apiKey}` },
     body: JSON.stringify(body),
+  });
+  const data = await r.json().catch(() => ({}));
+  return { ok: r.ok, status: r.status, data };
+}
+
+async function callGatewayGet(env, path, apiKey) {
+  const r = await fetch(`${env.API_BASE}${path}`, {
+    headers: { Authorization: `Bearer ${apiKey}` },
   });
   const data = await r.json().catch(() => ({}));
   return { ok: r.ok, status: r.status, data };
@@ -85,6 +99,11 @@ async function handleRpc(msg, apiKey, env) {
     if (name === "estimate_cost") {
       const r = await callGateway(env, "/v1/estimate", { url: args.url, pages: args.pages }, apiKey);
       if (!r.ok) return toolText(id, `Error ${r.status}: ${r.data.detail || "estimate failed"}`, true);
+      return toolText(id, JSON.stringify(r.data, null, 2));
+    }
+    if (name === "check_balance") {
+      const r = await callGatewayGet(env, "/v1/balance", apiKey);
+      if (!r.ok) return toolText(id, `Error ${r.status}: ${r.data.detail || "balance check failed"}`, true);
       return toolText(id, JSON.stringify(r.data, null, 2));
     }
     if (name === "read_document") {

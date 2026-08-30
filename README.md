@@ -26,6 +26,7 @@ Clients that can't set headers: `https://mcp.pennyocr.com/?key=pk_live_...`
 | --- | --- | --- |
 | `read_document` | `{url, pages?, output?, max_pages?, max_cost_usd?}` | `{content, pages, cost_usd, citations[]}` |
 | `estimate_cost` | `{url, pages?}` | page count + exact cost — **free** |
+| `check_balance` | `{}` | remaining credits + free-tier allowance — **free** |
 
 The cost caps refuse *before* any processing, with the numbers — so autonomous agents can
 reason about spend ("200 pages, $0.15 — proceed") and can never run past a prepaid balance.
