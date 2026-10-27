@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "pennyocr": {
+      "url": "https://mcp.pennyocr.com",
+      "headers": {
+        "Authorization": "Bearer ${env:PENNYOCR_API_KEY}"
+      }
+    }
+  }
+}
