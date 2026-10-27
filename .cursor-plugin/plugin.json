@@ -1,0 +1,30 @@
+{
+  "name": "pennyocr",
+  "version": "0.1.0",
+  "description": "Read PDFs and images as Markdown or text with exact per-call costs and hard spend caps. Requires your PennyOCR API key.",
+  "author": {
+    "name": "PennyOCR"
+  },
+  "homepage": "https://pennyocr.com/mcp/",
+  "repository": "https://github.com/imiraoui/pennyocr-mcp",
+  "license": "MIT",
+  "keywords": [
+    "ocr",
+    "pdf",
+    "documents"
+  ],
+  "mcpServers": "mcp.json",
+  "variables": {
+    "type": "object",
+    "properties": {
+      "PENNYOCR_API_KEY": {
+        "type": "string",
+        "title": "PennyOCR API key",
+        "description": "Your API key from https://pennyocr.com/dashboard/; document reading uses your PennyOCR credits."
+      }
+    },
+    "required": [
+      "PENNYOCR_API_KEY"
+    ]
+  }
+}
