@@ -38,3 +38,7 @@ a single Cloudflare Worker (`worker.js`) proxying the [PennyOCR API](https://pen
 
 Pricing: $0.75 per 1,000 pages · [pennyocr.com/pricing.txt](https://pennyocr.com/pricing.txt) ·
 Agent onboarding: [pennyocr.com/llms.txt](https://pennyocr.com/llms.txt)
+
+## Cursor plugin
+
+This repository includes a Cursor plugin manifest at `.cursor-plugin/plugin.json` and a plugin-specific `mcp.json`. In the plugin configuration, set `PENNYOCR_API_KEY` to your own API key from https://pennyocr.com/dashboard/. The repository contains only a variable placeholder, never a live key. Document reading uses your PennyOCR credits; use cost estimates and spend caps as appropriate. The separate `.mcp.json` uses Cursor environment-variable interpolation for direct MCP configuration.
